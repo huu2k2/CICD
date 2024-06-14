@@ -34,4 +34,6 @@ jobs:
       
       - name: List dist directory contents
         run: ls -la dist # Debug step to confirm dist directory exists and is populated
+      - name: List dist run test 
+        run: npm run test  
  
