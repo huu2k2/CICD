@@ -2,10 +2,10 @@
   "name": "cicd",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://huu2k2.github.io/CICD",
+  "homepage": "https://huu2k2.github.io/cicd",
   "type": "module",
   "scripts": {
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "test": "jest",
     "dev": "vite",
     "build": "vite build",
