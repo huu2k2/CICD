@@ -1,5 +1,4 @@
 name: Node.js CI
-
 on:
   push:
     branches: ["main"]
@@ -7,33 +6,26 @@ on:
     branches: ["main"]
 permissions:
   contents: read
-  pages: write   
+  pages: write
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [20.x]
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      
       - name: Install dependencies
         run: npm ci
-      
       - name: Build project
         run: npm run build
-      
       - name: List dist directory contents
         run: ls -la dist # Debug step to confirm dist directory exists and is populated
-      - name: List dist run test 
-        run: npm run test  
- 
+      - name: List dist run test
+        run: npm run test
